@@ -1,39 +1,368 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <title>Clash Royale Történet</title>
-  <style>
-    body {
-      font-family: 'Comic Sans MS', cursive;
-      background-color: #f2f2f2;
-      color: #333;
-      padding: 20px;
-    }
-    h1 {
-      color: #0066cc;
-    }
-    .character {
-      font-weight: bold;
-      color: #cc0000;
-    }
-    .battle {
-      background-color: #fff;
-      border: 2px dashed #0066cc;
-      padding: 15px;
-      margin-top: 20px;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clash Royale – Játékmenet, stratégiák & letöltés</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font (eljár egy kis eleganciáért) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>🏰 Clash Royale: A Tornyok Háborúja</h1>
-  <p>Egyszer volt, hol nem volt, egy arénában, ahol a <span class="character">Prince</span> és a <span class="character">Baby Dragon</span> együtt harcoltak a győzelemért.</p>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-neon" href="#">
+        <!-- Crown SVG -->
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5l3.5 8.5h11L21 7.5l-4 1.5L12 4 7 9 3 7.5z" fill="url(#g1)" />
+          <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#ffd166"/><stop offset="1" stop-color="#ff8c42"/></linearGradient></defs>
+        </svg>
+        <span style="margin-left:.35rem">Clash Royale — Kézikönyv</span>
+      </a>
 
-  <div class="battle">
-    <p>Az ellenfél <span class="character">Witch</span> varázslataival próbálta megállítani őket, de a <span class="character">Baby Dragon</span> tűzlehelete mindent elpusztított.</p>
-    <p>A <span class="character">Prince</span> rohamra indult, áttörte a védelmet, és egy hatalmas csapással ledöntötte a középső tornyot!</p>
-  </div>
+      <button class="navbar-toggler btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Navigáció">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+      </button>
 
-  <p>🎉 A győzelem az övék lett, és az aréna új bajnokokat ünnepelt!</p>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link soft-muted" href="#intro">Ismertető</a></li>
+          <li class="nav-item"><a class="nav-link soft-muted" href="#menet">Játékmenet</a></li>
+          <li class="nav-item"><a class="nav-link soft-muted" href="#kartya">Kártyák</a></li>
+          <li class="nav-item"><a class="nav-link soft-muted" href="#strat">Stratégiák</a></li>
+          <li class="nav-item"><a class="nav-link soft-muted" href="#download">Letöltés</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <span class="neon-badge">Pro Guide • Sötét neon</span>
+          <h1>Clash Royale — stratégiai leírás és játékmenet lépésről lépésre</h1>
+          <p class="muted fs-6">Gyors, tömör magyarázat a csatamezőről, a kártyák besorolásáról és működéséről — profi tipszekkel, hogy kezedben legyen a győzelem.</p>
+
+          <div class="mt-4 d-flex gap-2">
+            <a href="#menet" class="btn btn-lg btn-outline-primary" style="color:var(--neon-cyan); border-color:rgba(0,246,255,0.12);">
+              Megtudni hogyan
+            </a>
+            <a href="#download" class="btn btn-lg btn-primary" style="background:linear-gradient(90deg,var(--neon-pink),var(--neon-cyan)); border: none;">
+              Letöltés / Telepítés
+            </a>
+          </div>
+
+          <div class="mt-4 panel d-flex gap-3 align-items-center">
+            <div class="card-icon" aria-hidden="true">
+              <!-- Sword SVG -->
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 21l6-6 3 3L6 24 3 21zM21 3l-7 7" stroke="#00f6ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="small muted">Gyors összegzés</div>
+              <div class="fw-bold">Tempo, elosztás és deck-szinkron — ezek döntik el a csatát.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <!-- Mockup / SVG arena -->
+          <div class="panel text-center">
+            <svg viewBox="0 0 600 360" width="100%" aria-hidden="true">
+              <defs>
+                <linearGradient id="lgA" x1="0" x2="1"><stop offset="0" stop-color="#00121a"/><stop offset="1" stop-color="#0b0712"/></linearGradient>
+              </defs>
+              <rect x="0" y="0" width="100%" height="100%" rx="14" fill="url(#lgA)"/>
+              <!-- Simplified arena lanes -->
+              <g transform="translate(40,30)" stroke-opacity="0.08" stroke="#fff">
+                <rect x="0" y="0" width="520" height="300" rx="10" fill="none" stroke-width="2"/>
+                <line x1="260" y1="0" x2="260" y2="300" stroke-width="1.6"/>
+                <line x1="0" y1="150" x2="520" y2="150" stroke-width="1.6"/>
+              </g>
+
+              <!-- Neon markers -->
+              <g transform="translate(40,30)">
+                <circle cx="80" cy="60" r="8" fill="#00f6ff" opacity="0.95"/>
+                <circle cx="440" cy="240" r="8" fill="#ff2d95" opacity="0.95"/>
+              </g>
+            </svg>
+
+            <div class="mt-3 muted small">Arenakijelölés: toronyvonalak, közép, támadó/defenzív zónák</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+    <!-- INTRO -->
+    <section id="intro" class="mb-5">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h2 class="section-title">Rövid ismertető</h2>
+          <p class="muted">A Clash Royale valós idejű, 1v1 vagy 2v2 taktikai kártyajáték, ahol kártyákat hívsz meg, hogy tornyokat rombolj és ellenfeled királyát ledöntsd. A siker kulcsa a deck-kompozíció, a körönkénti elosztás és a ritmus — nem csak a legerősebb lap számít.</p>
+          <ul class="muted">
+            <li><span class="glow">Elixir menedzsment</span> a legerősebb skill — spórolj és nyomd a megfelelő pillanatban.</li>
+            <li><span class="glow">Pozícionálás</span> döntően befolyásolja a küzdelmet: egy jó lerakás megfordít egy fogást.</li>
+            <li><span class="glow">Deck szinergia</span> előnyösebb, mint véletlenszerű erős lapok halmaza.</li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <div class="panel text-center">
+            <div class="fw-bold">Tudnivalók</div>
+            <div class="muted small">Aréna szintek, ligák és szezonális jutalmak — mindig frissül, kövesd a változásokat.</div>
+            <div class="mt-3 d-flex gap-2 justify-content-center">
+              <span class="tag">1v1</span>
+              <span class="tag">2v2</span>
+              <span class="tag">Clan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENET -->
+    <section id="menet" class="mb-5">
+      <h3 class="section-title mb-3">Játékmenet lépései</h3>
+
+      <div class="row g-3">
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="cr-card p-3 h-100">
+            <div class="d-flex gap-3">
+              <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M12 2v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+              <div>
+                <h6 class="mb-1">1. Elixir gyűjtés</h6>
+                <p class="muted small mb-0">A meccs folyamán folyamatosan töltődik az elixir — a költségek napi ritmusát igazítsd a stratégiához.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="cr-card p-3 h-100">
+            <div class="d-flex gap-3">
+              <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M6 4l12 8-12 8V4z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div>
+                <h6 class="mb-1">2. Kártya lerakás & tempó</h6>
+                <p class="muted small mb-0">Ne mindent egyszerre nyomj. Különíts el védekezésre és támadásra kártyákat.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="cr-card p-3 h-100">
+            <div class="d-flex gap-3">
+              <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M12 21c-5-4-9-9-9-12 2 1 5-1 9 2s7 1 9 2c0 3-4 8-9 12z" stroke="currentColor" stroke-width="1.6"/></svg></div>
+              <div>
+                <h6 class="mb-1">3. Pozícionálás</h6>
+                <p class="muted small mb-0">Támadó egységeket előnyös hátulról indítani; pick az ellenfél lapjaira.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="cr-card p-3 h-100">
+            <div class="d-flex gap-3">
+              <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M12 3l3 7h-6l3-7z" stroke="currentColor" stroke-width="1.6"/></svg></div>
+              <div>
+                <h6 class="mb-1">4. Kontra és beosztás</h6>
+                <p class="muted small mb-0">Állíts fel csapdákat, taktikákat — a jó kontra értékéhez időzés kell.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="cr-card p-3 h-100">
+            <div class="d-flex gap-3">
+              <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg></div>
+              <div>
+                <h6 class="mb-1">5. Double Elixir fázis</h6>
+                <p class="muted small mb-0">Itt dől el sok fordítás — készülj meg az agresszív spammelésre és erős pushokra.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="cr-card p-3 h-100">
+            <div class="d-flex gap-3">
+              <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6"/></svg></div>
+              <div>
+                <h6 class="mb-1">6. Tower focus</h6>
+                <p class="muted small mb-0">Ha a cél a Crown Tower, tartsd meg a push-od és fedezd annak sebezhetőségét.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KÁRTYÁK -->
+    <section id="kartya" class="mb-5">
+      <h3 class="section-title mb-3">Kártyák & klasszifikáció</h3>
+      <p class="muted">Kártya típusok: troop (egység), spell (varázs), building (épület). Ritkaság és elixir-költség határozza meg a szerepüket egy deckben.</p>
+
+      <div class="row g-3">
+        <!-- Example cards -->
+        <div class="col-md-4">
+          <div class="cr-card p-3 h-100 d-flex gap-3">
+            <div style="width:64px; display:grid; place-items:center;">
+              <!-- Troop SVG -->
+              <svg width="56" height="56" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3" fill="#ffd166"/><rect x="7" y="12" width="10" height="8" rx="2" fill="#ff8c42"/></svg>
+            </div>
+            <div>
+              <h6>Troop — Tank</h6>
+              <p class="muted small mb-0">Nagy életerő, lövedékek elnyelése. Jellemző szerep: előretolt tank a pushban.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="cr-card p-3 h-100 d-flex gap-3">
+            <div style="width:64px; display:grid; place-items:center;">
+              <!-- Spell SVG -->
+              <svg width="56" height="56" viewBox="0 0 24 24"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" fill="#00f6ff" opacity="0.95"/></svg>
+            </div>
+            <div>
+              <h6>Spell — Területi varázs</h6>
+              <p class="muted small mb-0">Gyorsan leüti tömeget vagy sebzi a tornyokat. Kiválóan kombinálható sugaras pushok ellen.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="cr-card p-3 h-100 d-flex gap-3">
+            <div style="width:64px; display:grid; place-items:center;">
+              <!-- Building SVG -->
+              <svg width="56" height="56" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="#ff2d95"/></svg>
+            </div>
+            <div>
+              <h6>Building — Védelem / Distrakció</h6>
+              <p class="muted small mb-0">Épületek leterelik a ellenfél csapatait, ideális a nagy DPS csapások szétszórására.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATÉGIÁK -->
+    <section id="strat" class="mb-5">
+      <h3 class="section-title mb-3">Stratégiák & tippek</h3>
+
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="panel">
+            <h5 class="mb-2">Alap stratégiák</h5>
+            <ul>
+              <li class="muted">Chip push: kis sebzés, örök nyomás — kicsi elixir-nyereség tartósan.</li>
+              <li class="muted">All-in push: kivárás, majd nagy elixir ráfordítás egy oldalra — ha sikerül, döntő lehet.</li>
+              <li class="muted">Cycle deck: gyors lapforgás, hogy újra meg újra ugyanazt a hatást tudd alkalmazni.</li>
+            </ul>
+
+            <h6 class="mt-3">Konkrét tippek (pro level)</h6>
+            <ol class="muted">
+              <li>Figyeld az ellenfél kézben lévő lapjait és számold az elixirt, hogy megtippeld a következő reakciót.</li>
+              <li>Ha az ellenfél elhúzza a heavy tankot hátulról, készülj a support lerakására a közép felé.</li>
+              <li>Double-elixir-ben ne kapkodj: a megfelelő időzítés mindennél fontosabb.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="panel">
+            <h6>Gyors checklist</h6>
+            <ul class="muted">
+              <li>Deck-szinkergia rendben?</li>
+              <li>Elixir átlag megfelel-e a célhoz?</li>
+              <li>Van-e anti-air válaszod?</li>
+              <li>Készen állsz a kontra kombinációkra?</li>
+            </ul>
+
+            <div class="mt-3 text-center">
+              <div class="small muted">Videó bemutató</div>
+              <!-- Beágyazott YouTube placeholder (cseréld le valódi linkre) -->
+              <div class="ratio ratio-16x9 mt-2">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_hNxfiXmeAE?si=UBc4ydaKEQS0_rMT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD / INSTALL -->
+    <section id="download" class="mb-5">
+      <h3 class="section-title mb-3">Letöltés / Telepítési információ</h3>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="panel">
+            <p class="muted mb-2">Clash Royale elérhető iOS és Android rendszereken. Telepítés egyszerű: keresd az alkalmazásboltokban a "Clash Royale" címet, vagy használd az alábbi linkeket (helykitöltő linkek).</p>
+            <div class="d-flex gap-2">
+              <a class="btn btn-outline-light" href="#" role="button" aria-label="App Store">
+                <!-- App store badge mock -->
+                <svg width="24" height="24" viewBox="0 0 24 24" style="margin-right:.45rem"><rect width="24" height="24" rx="5" fill="#0f1724"/></svg>
+                App Store
+              </a>
+              <a class="btn btn-outline-light" href="#" role="button" aria-label="Google Play">
+                <svg width="24" height="24" viewBox="0 0 24 24" style="margin-right:.45rem"><rect width="24" height="24" rx="5" fill="#0f1724"/></svg>
+                Google Play
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel text-center">
+            <div class="fw-bold">Rendszerkövetelmények</div>
+            <div class="muted small">Modern iOS/Android verzió; stabil internetkapcsolat; legalább néhány száz MB szabad tárhely.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER + LOVE STORY -->
+  <footer class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="love-story panel">
+          <h5 class="mb-2 section-title">Szerelmes sztori — A hercegnő megmentése</h5>
+          <p class="mb-0" style="line-height:1.45;">
+            Amikor a csatatér füstje elült és csend telepedett a romos tornyokra, a király felismerte, hogy a legnagyobb győzelem nem a koronák gyűjtése, hanem a hűség helyreállítása.
+            Egy kimerült vitéz vezette a végső rohamot, és a király oldalán, együtt törtek át a zárt sorokon, hogy elérjék a fogva tartott hercegnőt.
+            A hercegnő szemében nem csupán hála gyúlt fel, hanem egy csendes megértés — hogy a bátorság nem mindig fényes, de mégis elég volt ahhoz, hogy a reményt visszahozzák.
+            Amikor a kapuk kinyíltak, és a csillagok is mintha rájuk vigyáztak volna, a király először félve, majd határozottan fogta a hercegnő kezét.
+            Nem volt szükség pompára: a csata sebei és a közösen átélt félelem elég volt ahhoz, hogy két ember közelebb kerüljön egymáshoz.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 d-flex align-items-center justify-content-end">
+        <div class="text-end muted small">
+          <div>© <strong>Clash Royale — Pro Guide</strong></div>
+          <div>Elkészítve: <span class="soft-muted">2025</span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle + small script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

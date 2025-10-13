@@ -1,5 +1,133 @@
-body {
-    margin: 0 auto;
-    background-color: black;
-    color: white;
-}
+    /* Alap stílusok: sötét -> neon */
+    :root{
+        --bg:#05020a;
+        --panel:#0b0810;
+        --neon-cyan:#00f6ff;
+        --neon-pink:#ff2d95;
+        --neon-gold:#ffd166;
+        --muted:#9aa0a6;
+      }
+      html,body{
+        height:100%;
+        background: radial-gradient(1200px 400px at 10% 10%, rgba(0,246,255,0.03), transparent),
+                    radial-gradient(800px 300px at 90% 90%, rgba(255,45,149,0.03), transparent),
+                    var(--bg);
+        color:#e9eef6;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        scroll-behavior:smooth;
+      }
+  
+      /* Navbar */
+      .navbar{
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        border-bottom: 1px solid rgba(255,255,255,0.03);
+        backdrop-filter: blur(6px);
+      }
+      .brand-neon{
+        display:inline-flex;
+        gap:.6rem;
+        align-items:center;
+        color:var(--neon-gold);
+        font-weight:700;
+        text-shadow: 0 0 8px rgba(255,209,102,0.25);
+      }
+  
+      /* Hero */
+      .hero{
+        padding:6rem 0 4rem;
+        min-height:60vh;
+        display:flex;
+        align-items:center;
+      }
+      .hero h1{
+        font-size:clamp(1.8rem, 3.5vw, 3.2rem);
+        line-height:1.02;
+        letter-spacing: -0.02em;
+        text-shadow: 0 0 8px rgba(0,246,255,0.08), 0 0 18px rgba(255,45,149,0.04);
+      }
+      .neon-badge{
+        display:inline-block;
+        padding:.25rem .6rem;
+        border-radius:999px;
+        background: linear-gradient(90deg, rgba(0,246,255,0.08), rgba(255,45,149,0.06));
+        color:var(--neon-cyan);
+        box-shadow: 0 0 14px rgba(0,246,255,0.06);
+        font-weight:600;
+        font-size:.85rem;
+        margin-bottom:.8rem;
+      }
+  
+      /* Panels */
+      .panel{
+        background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(0,0,0,0.06));
+        border: 1px solid rgba(255,255,255,0.03);
+        padding:1.1rem;
+        border-radius:.75rem;
+      }
+      .card-icon{
+        width:56px;
+        height:56px;
+        display:grid;
+        place-items:center;
+        border-radius:12px;
+        background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        box-shadow: 0 6px 20px rgba(0,0,0,0.6), 0 0 18px rgba(0,246,255,0.035);
+      }
+      .muted { color: var(--muted); }
+  
+      /* Neon headings */
+      .section-title{
+        color:var(--neon-cyan);
+        text-shadow: 0 0 18px rgba(0,246,255,0.06);
+        font-weight:700;
+      }
+  
+      /* Cards grid */
+      .cr-card{
+        border-radius:.6rem;
+        overflow:hidden;
+        background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0.06));
+        border:1px solid rgba(255,255,255,0.02);
+        transition: transform .18s ease, box-shadow .18s ease;
+      }
+      .cr-card:hover{
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 28px rgba(255,45,149,0.03);
+      }
+  
+      /* Glow text for important bits */
+      .glow{
+        color:var(--neon-pink);
+        text-shadow: 0 0 10px rgba(255,45,149,0.08);
+        font-weight:700;
+      }
+  
+      /* Footer / love story */
+      footer{
+        padding:2.2rem 0;
+        border-top:1px solid rgba(255,255,255,0.02);
+        margin-top:2.5rem;
+      }
+      .love-story{
+        background: linear-gradient(90deg, rgba(255,45,149,0.02), rgba(0,246,255,0.02));
+        padding:1rem;
+        border-radius:.6rem;
+        color:#f8f9fb;
+      }
+  
+      /* Utility */
+      .soft-muted{ color: rgba(233,238,246,0.65); }
+      .tag{
+        padding:.25rem .5rem;
+        border-radius:.45rem;
+        font-size:.8rem;
+        background: rgba(255,255,255,0.02);
+        border:1px solid rgba(255,255,255,0.02);
+      }
+  
+      /* Responsive tweaks */
+      @media (max-width:576px){
+        .hero{ padding:3.5rem 0 2.5rem; }
+      }
