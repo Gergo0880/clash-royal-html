@@ -48,6 +48,6 @@ A cél: demo/prototípus, portfólió, vagy statikus infóoldal.
 Egyszerűen klónozd és nyisd meg a `index.html`-t a böngésződben:
 
 ```bash
-git clone https://github.com/<felhasznalonev>/clash-royale-pro-guide.git
+git clone https://github.com/Gergo0880/clash-royal-html.git
 cd clash-royale-pro-guide
 # Nyisd meg index.html-t a böngésződben
