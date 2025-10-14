@@ -49,5 +49,5 @@ Egyszerűen klónozd és nyisd meg a `index.html`-t a böngésződben:
 
 ```bash
 git clone https://github.com/Gergo0880/clash-royal-html.git
-cd clash-royale-pro-guide
+cd clash-royale-html
 # Nyisd meg index.html-t a böngésződben
