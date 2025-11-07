@@ -1,8 +1,8 @@
-    // Kis JS: sima interakciók, anchor scroll és egy card filter példa (később bővíthető)
+
     (function(){
         'use strict';
   
-        // Aktív nav-link kiemelés scroll-hoz (bootstrap scrollspy alternatíva)
+
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = [...document.querySelectorAll('main section, header')];
         function onScroll(){
@@ -19,7 +19,7 @@
         window.addEventListener('scroll', onScroll, {passive:true});
         onScroll();
   
-        // Egyszerű filter demo (később csinálhatsz konkrét filter gombokat)
+
         window.filterCards = function(keyword){
           const cards = document.querySelectorAll('.cr-card');
           cards.forEach(c => {
@@ -31,7 +31,7 @@
           });
         };
   
-        // Mobil navbar bezárása kattintás után (jó, ha linket nyomsz)
+
         const bsCollapse = document.getElementById('navMain');
         const bs = new bootstrap.Collapse(bsCollapse, {toggle:false});
         document.querySelectorAll('.nav-link').forEach(link => {

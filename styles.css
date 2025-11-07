@@ -1,4 +1,4 @@
-    /* Alap stílusok: sötét -> neon */
+    
     :root{
         --bg:#05020a;
         --panel:#0b0810;
@@ -19,7 +19,7 @@
         scroll-behavior:smooth;
       }
   
-      /* Navbar */
+      
       .navbar{
         background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
         border-bottom: 1px solid rgba(255,255,255,0.03);
@@ -34,7 +34,7 @@
         text-shadow: 0 0 8px rgba(255,209,102,0.25);
       }
   
-      /* Hero */
+      
       .hero{
         padding:6rem 0 4rem;
         min-height:60vh;
@@ -59,7 +59,7 @@
         margin-bottom:.8rem;
       }
   
-      /* Panels */
+     
       .panel{
         background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(0,0,0,0.06));
         border: 1px solid rgba(255,255,255,0.03);
@@ -77,14 +77,14 @@
       }
       .muted { color: var(--muted); }
   
-      /* Neon headings */
+      
       .section-title{
         color:var(--neon-cyan);
         text-shadow: 0 0 18px rgba(0,246,255,0.06);
         font-weight:700;
       }
   
-      /* Cards grid */
+     
       .cr-card{
         border-radius:.6rem;
         overflow:hidden;
@@ -97,14 +97,14 @@
         box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 28px rgba(255,45,149,0.03);
       }
   
-      /* Glow text for important bits */
+      
       .glow{
         color:var(--neon-pink);
         text-shadow: 0 0 10px rgba(255,45,149,0.08);
         font-weight:700;
       }
   
-      /* Footer / love story */
+      
       footer{
         padding:2.2rem 0;
         border-top:1px solid rgba(255,255,255,0.02);
@@ -117,7 +117,7 @@
         color:#f8f9fb;
       }
   
-      /* Utility */
+      
       .soft-muted{ color: rgba(233,238,246,0.65); }
       .tag{
         padding:.25rem .5rem;
@@ -127,7 +127,7 @@
         border:1px solid rgba(255,255,255,0.02);
       }
   
-      /* Responsive tweaks */
+      
       @media (max-width:576px){
         .hero{ padding:3.5rem 0 2.5rem; }
       }
